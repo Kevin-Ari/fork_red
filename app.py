@@ -26,7 +26,7 @@ async def security_headers(request: Request, call_next):
         "frame-src https://www.youtube-nocookie.com https://www.youtube.com; "
         "script-src 'self' https://iwxei6q3.insforge.site; "
         "connect-src 'self' https://iwxei6q3.insforge.site; "
-        "style-src 'self'; font-src 'self'; "
+        "style-src 'self' https://iwxei6q3.insforge.site; font-src 'self'; "
         "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
     )
     response.headers["X-Content-Type-Options"] = "nosniff"
