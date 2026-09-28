@@ -1,0 +1,11 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+*.pyo
+README.md
+.gitignore
+*.json
+!assets/sources.json
+!assets/videos.json
