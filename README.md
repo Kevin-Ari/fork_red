@@ -29,6 +29,14 @@ La suscripción al newsletter queda enlazada al sitio original porque esta versi
 
 ## Despliegue
 
-Cada envío a la rama `main` ejecuta `.github/workflows/deploy.yml`, que construye la imagen y actualiza Cloud Run en Santiago (`southamerica-west1`). El servicio usa 0 instancias mínimas, 1 máxima, 0.5 vCPU y 256 MiB. El repositorio de GitHub es privado; Cloud Run publica únicamente la web estática.
+Repositorio público: [Kevin-Ari/fork_red](https://github.com/Kevin-Ari/fork_red). Sitio desplegado: [fork-red en Cloud Run](https://fork-red-7iq6haelja-tl.a.run.app/). Proyecto GCP: `fork-red-kevinari-260928`.
+
+Cada envío a la rama `main` ejecuta `.github/workflows/deploy.yml`, que construye la imagen y actualiza Cloud Run en Santiago (`southamerica-west1`). El servicio usa 0 instancias mínimas, 1 máxima, 0.5 vCPU y 256 MiB. Para publicar cambios desde la terminal:
+
+```powershell
+git add .
+git commit -m "Actualizar sitio"
+git push origin main
+```
 
 La acción usa OpenID Connect y Workload Identity Federation para obtener credenciales temporales. No se almacenan claves de cuentas de servicio en GitHub ni en el repositorio. Las variables `GCP_PROJECT_ID`, `GCP_WIF_PROVIDER`, `GCP_DEPLOY_SA` y `GCP_RUNTIME_SA` son identificadores de recursos, no secretos.
