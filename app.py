@@ -23,7 +23,7 @@ async def security_headers(request: Request, call_next):
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; "
         "img-src 'self' data:; "
-        "frame-src https://www.youtube-nocookie.com https://www.youtube.com; "
+        "frame-src https://www.youtube-nocookie.com https://www.youtube.com https://iwxei6q3.insforge.site; "
         "script-src 'self' https://iwxei6q3.insforge.site; "
         "connect-src 'self' https://iwxei6q3.insforge.site; "
         "style-src 'self' https://iwxei6q3.insforge.site; font-src 'self'; "
