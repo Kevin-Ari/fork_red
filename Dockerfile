@@ -9,7 +9,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
 
-COPY --chown=65532:65532 app.py index.html styles.css script.js ./
+COPY --chown=65532:65532 app.py index.html styles.css responsive.css script.js ./
 COPY --chown=65532:65532 assets ./assets
 
 USER 65532:65532

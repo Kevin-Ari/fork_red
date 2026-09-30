@@ -49,6 +49,11 @@ def styles() -> FileResponse:
     return FileResponse(BASE_DIR / "styles.css", media_type="text/css")
 
 
+@app.get("/responsive.css", include_in_schema=False)
+def responsive_styles() -> FileResponse:
+    return FileResponse(BASE_DIR / "responsive.css", media_type="text/css")
+
+
 @app.get("/script.js", include_in_schema=False)
 def script() -> FileResponse:
     return FileResponse(BASE_DIR / "script.js", media_type="application/javascript")
